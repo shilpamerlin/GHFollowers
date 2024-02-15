@@ -8,8 +8,8 @@
 import UIKit
 
 protocol UserInfoVCDelegate: class {
-    func didTapGitHubProfile()
-    func didTapGetFollowers()
+    func didTapGitHubProfile(for user: User)
+    func didTapGetFollowers(for user: User)
 }
 class UserInfoVC: UIViewController {
 
@@ -20,6 +20,7 @@ class UserInfoVC: UIViewController {
     var itemViews: [UIView] = []
     
     var username: String!
+    weak var delegate: FollowerListVCDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +62,9 @@ class UserInfoVC: UIViewController {
         let followerItemVC = GFFollowerItemVC(user: user)
         followerItemVC.delegate = self
         
-        self.add(childVC: repoItemVC, to: self.headerView)
-        self.add(childVC: followerItemVC, to: self.itemViewOne)
-        self.add(childVC: GFFollowerItemVC(user: user), to: self.itemViewTwo)
+        self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
+        self.add(childVC: repoItemVC, to: self.itemViewOne)
+        self.add(childVC: followerItemVC, to: self.itemViewTwo)
         self.dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat())"
 
     }
@@ -112,13 +113,21 @@ class UserInfoVC: UIViewController {
 }
 
 extension UserInfoVC: UserInfoVCDelegate {
-    func didTapGitHubProfile() {
-        
+    func didTapGitHubProfile(for user: User) {
+        guard let url = URL(string: user.htmlUrl) else {
+            presentGFAlertOnMainThread(title: "invalid URL", message: "The URL attached to this user is invalid.", buttonTitle: "Ok")
+            return
+        }
+        presentSafariVC(with: url)
     }
     
-    func didTapGetFollowers() {
-        
+    func didTapGetFollowers(for user: User) {
+        guard user.followers != 0 else {
+            presentGFAlertOnMainThread(title: "No followers", message: "This user has no followers", buttonTitle: "So sad")
+            return
+        }
+        delegate.didRequestFollowers(for: user.login)
+        dismissVC()
     }
-    
     
 }
