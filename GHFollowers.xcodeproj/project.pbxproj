@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8D4482EA29C4B30500D3F13D /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4482E929C4B30500D3F13D /* FollowerListVC.swift */; };
+		8D49242E2B80A057003EB599 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49242D2B80A057003EB599 /* PersistanceManager.swift */; };
+		8D4924302B8331D5003EB599 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49242F2B8331D5003EB599 /* FavoriteCell.swift */; };
 		8D8405B129D24BD90029433E /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8405B029D24BD90029433E /* Follower.swift */; };
 		8D8405B329D24BF20029433E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8405B229D24BF20029433E /* User.swift */; };
 		8D8405B629D263E80029433E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8405B529D263E80029433E /* NetworkManager.swift */; };
@@ -62,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		8D4482E929C4B30500D3F13D /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
+		8D49242D2B80A057003EB599 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
+		8D49242F2B8331D5003EB599 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		8D8405B029D24BD90029433E /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		8D8405B229D24BF20029433E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8D8405B529D263E80029433E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				8D8405B529D263E80029433E /* NetworkManager.swift */,
+				8D49242D2B80A057003EB599 /* PersistanceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 		8D8405BA29D399A70029433E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8D49242F2B8331D5003EB599 /* FavoriteCell.swift */,
 				8D8405BB29D399E30029433E /* FollowerCell.swift */,
 			);
 			path = Cells;
@@ -466,7 +472,9 @@
 				8D9F948329CCAE6E00C6E609 /* GFAlertVC.swift in Sources */,
 				8D8405D82A2124AC0029433E /* GFFollowerItemVC.swift in Sources */,
 				8D8405D22A210BF70029433E /* GFItemInfoView.swift in Sources */,
+				8D4924302B8331D5003EB599 /* FavoriteCell.swift in Sources */,
 				8D8405BC29D399E30029433E /* FollowerCell.swift in Sources */,
+				8D49242E2B80A057003EB599 /* PersistanceManager.swift in Sources */,
 				8D8405B929D384E70029433E /* GFError.swift in Sources */,
 				8D8405CC2A1FF6F40029433E /* GFUserInfoHeaderVC.swift in Sources */,
 				8DA6068A29C21C9800007A64 /* AppDelegate.swift in Sources */,
